@@ -14,7 +14,7 @@ using System.Diagnostics;
  * Last Update: 12/12/2015
 */
 
-namespace Dash.Engine.Diagnostics
+namespace DashCMD
 {
     /// <summary>
     /// A command method called when a command is used in DashCMD.
@@ -175,54 +175,54 @@ namespace Dash.Engine.Diagnostics
                         WriteLine("");
                     });
 
-                //AddCommand("cmd-history", "Sets the length of the history.",
-                //    "cmd-history <length [current window height - 300]>",
-                //    delegate (string[] args)
-                //    {
-                //        if (isLinux)
-                //        {
-                //            WriteError("Command not available in Linux terminals.");
-                //            return;
-                //        }
+                AddCommand("cmd-history", "Sets the length of the history.",
+                    "cmd-history <length [current window height - 300]>",
+                    delegate (string[] args)
+                    {
+                        if (isLinux)
+                        {
+                            WriteError("Command not available in Linux terminals.");
+                            return;
+                        }
 
-                //        if (!AllowCMDHistory)
-                //        {
-                //            WriteError("Command not allowed.");
-                //            return;
-                //        }
+                        if (!AllowCMDHistory)
+                        {
+                            WriteError("Command not allowed.");
+                            return;
+                        }
 
-                //        if (args.Length < 1)
-                //        {
-                //            WriteError("Wrong number of arguments");
-                //            return;
-                //        }
+                        if (args.Length < 1)
+                        {
+                            WriteError("Wrong number of arguments");
+                            return;
+                        }
 
-                //        int length = Convert.ToInt32(args[0]);
+                        int length = Convert.ToInt32(args[0]);
 
-                //        if (length <= Console.WindowHeight || length > 300)
-                //        {
-                //            WriteError("Invalid length: must be between the current window height and 300");
-                //            return;
-                //        }
-                //        else
-                //        {
-                //            Console.WindowTop = 0;
-                //            Console.BufferHeight = length;
-                //            WriteInputLine();
-                //        }
-                //    });
+                        if (length <= Console.WindowHeight || length > 300)
+                        {
+                            WriteError("Invalid length: must be between the current window height and 300");
+                            return;
+                        }
+                        else
+                        {
+                            Console.WindowTop = 0;
+                            Console.BufferHeight = length;
+                            WriteInputLine();
+                        }
+                    });
 
-                //AddCommand("cmd-exit", "Exits DashCMD.",
-                //    delegate (string[] args)
-                //    {
-                //        if (!AllowCMDExit)
-                //        {
-                //            WriteError("Command not allowed.");
-                //            return;
-                //        }
+                AddCommand("cmd-exit", "Exits DashCMD.",
+                    delegate (string[] args)
+                    {
+                        if (!AllowCMDExit)
+                        {
+                            WriteError("Command not allowed.");
+                            return;
+                        }
 
-                //        StopListening();
-                //    });
+                        StopListening();
+                    });
 
                 // Mark all commands are core.
                 List<string> keys = new List<string>(commands.Keys);
@@ -757,18 +757,18 @@ namespace Dash.Engine.Diagnostics
         /// <typeparam name="T">The datatype of the cvar.</typeparam>
         /// <param name="name">The cvar's name.</param>
         /// <param name="value">The cvar's value.</param>
-        //public static void AddCVar<T>(string name, T value)
-        //{
-        //    if (name == null)
-        //        throw new ArgumentNullException("name");
-        //    if (value == null)
-        //        throw new ArgumentNullException("value");
+        public static void AddCVar<T>(string name, T value)
+        {
+            if (name == null)
+                throw new ArgumentNullException("name");
+            if (value == null)
+                throw new ArgumentNullException("value");
 
-        //    if (CVars.ContainsKey(name))
-        //        throw new Exception(String.Format("CVar \"{0}\" already exists!", name));
-        //    else
-        //        CVars.Add(name, new CVar(typeof(T), value));
-        //}
+            if (CVars.ContainsKey(name))
+                throw new Exception(String.Format("CVar \"{0}\" already exists!", name));
+            else
+                CVars.Add(name, new CVar(typeof(T), value));
+        }
 
         /// <summary>
         /// Removes a CVar.
