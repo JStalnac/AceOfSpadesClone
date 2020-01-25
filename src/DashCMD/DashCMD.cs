@@ -14,7 +14,7 @@ using System.Diagnostics;
  * Last Update: 12/12/2015
 */
 
-namespace DashCMD
+namespace Dash.CMD
 {
     /// <summary>
     /// A command method called when a command is used in DashCMD.

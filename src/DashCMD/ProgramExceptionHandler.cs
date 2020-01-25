@@ -6,7 +6,7 @@ using System.IO;
  * Ethan Lafrenais
 */
 
-namespace DashCMD
+namespace Dash.CMD
 {
     public delegate void DashExceptionEventHandler(DashExceptionHandlerEventArgs args);
     public class DashExceptionHandlerEventArgs : EventArgs

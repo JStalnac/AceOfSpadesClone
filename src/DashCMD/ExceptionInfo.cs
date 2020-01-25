@@ -5,7 +5,7 @@ using System.Text;
  * Ethan Lafrenais
 */
 
-namespace DashCMD
+namespace Dash.CMD
 {
     public class ExceptionInfo
     {

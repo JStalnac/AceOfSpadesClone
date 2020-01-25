@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.5.0.1</Version>
+    <Company />
+    <Authors>JStalnac, Ethan Lafrenais</Authors>
+    <PackageProjectUrl>github.com/JStalnac/DashCMD</PackageProjectUrl>
+    <RepositoryUrl>github.com/JStalnac/DashCMD</RepositoryUrl>
+    <Copyright>Ethan Lafrenais</Copyright>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <AssemblyVersion>1.5.0.1</AssemblyVersion>
+    <FileVersion>1.5.0.1</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ using System.Threading;
  * Last Update: 7/21/2015
 */
 
-namespace DashCMD
+namespace Dash.CMD
 {
     /// <summary>
     /// Used for the draw calls of a DashCMDScreen
