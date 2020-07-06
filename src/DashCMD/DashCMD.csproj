@@ -11,6 +11,7 @@
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <AssemblyVersion>1.5.0.1</AssemblyVersion>
     <FileVersion>1.5.0.1</FileVersion>
+    <RootNamespace>Dash.CMD</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
